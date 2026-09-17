@@ -1,0 +1,85 @@
+.home-background[b-c2hhrud7dd] {
+    min-height: 100vh;
+    /* This sets the base light color from the image */
+    background-color: #f2f5fa; 
+    
+    /* TODO: Add your blue dot pattern image here */
+    background-image: url('images/dashboard-background.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-navbar[b-c2hhrud7dd] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 16px 40px;
+}
+
+.logo[b-c2hhrud7dd] {
+    font-size: 28px;
+    font-weight: 900;
+    color: #111;
+    letter-spacing: 1.5px;
+    /* Optional: to closely mimic the wide font in the image */
+    transform: scaleX(1.2); 
+    transform-origin: left center;
+}
+
+.nav-actions[b-c2hhrud7dd] {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-icon[b-c2hhrud7dd] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    cursor: pointer;
+}
+
+.nav-icon:hover[b-c2hhrud7dd] {
+    color: #555;
+}
+
+.logout-link[b-c2hhrud7dd] {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.logout-link:hover[b-c2hhrud7dd] {
+    text-decoration: underline;
+}
+
+.content-area[b-c2hhrud7dd] {
+    flex-grow: 1;
+    padding: 40px 60px;
+}
+
+.welcome-heading[b-c2hhrud7dd] {
+    font-size: 32px;
+    font-weight: 400; /* Standard weight like the image */
+    color: #111;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .top-navbar[b-c2hhrud7dd] {
+        padding: 16px 20px;
+    }
+    
+    .content-area[b-c2hhrud7dd] {
+        padding: 30px 20px;
+    }
+}

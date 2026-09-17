@@ -1,0 +1,100 @@
+.login-page {
+    /* --- Layout tuning scoped to this component --- */
+    --left-area-width: 46%;   /* how much of the screen the left (form) side occupies */
+    --form-width: 380px;      /* width of the form block itself */
+    --input-radius: 30px;     /* roundness of inputs/button */
+
+    position: relative;
+    min-height: 100vh;
+    background-image: url('images/login-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.form-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--left-area-width);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-block {
+    width: var(--form-width);
+    text-align: center;
+}
+
+.form-block h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: var(--input-radius);
+    font-size: 15px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.text-input::placeholder {
+    color: #aaa;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin-top: 8px;
+    background-color: #6C63FF;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--input-radius);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.login-btn:hover {
+    background-color: #5A50E6;
+}
+
+.signup-line {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #111;
+}
+
+.signup-line a {
+    color: #5B4FE0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-line a:hover {
+    text-decoration: underline;
+}
+
+/* Changed from @@media to @media for standard CSS files */
+@media (max-width: 900px) {
+    .form-area {
+        width: 100%;
+        padding: 0 24px;
+    }
+    .form-block {
+        width: 100%;
+        max-width: 380px;
+    }
+}

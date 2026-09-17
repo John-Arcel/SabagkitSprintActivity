@@ -1,0 +1,38 @@
+@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>ReqClub - Login</PageTitle>
+
+<div class="login-page">
+    <div class="form-area">
+        <div class="form-block">
+            <h2 class="welcome-text">Welcome Back</h2>
+
+            <EditForm Model="@loginModel" OnValidSubmit="HandleLogin" FormName="LoginForm">
+                <input class="text-input" placeholder="Username" @bind="loginModel.Username" />
+                <input class="text-input" type="password" placeholder="Password" @bind="loginModel.Password" />
+                <button type="submit" class="login-btn">Login</button>
+            </EditForm>
+
+            <p class="signup-line">
+                Don't have an account? <a href="/register">Sign up here</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+
+    private void HandleLogin()
+    {
+        // TODO: validate credentials
+        NavigationManager.NavigateTo("/dashboard");
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+}

@@ -1,0 +1,41 @@
+@page "/register"
+@inject NavigationManager NavigationManager
+
+<PageTitle>ReqClub - Join</PageTitle>
+
+<div class="login-page">
+    <div class="form-area">
+        <div class="form-block">
+            <h2 class="welcome-text">Join ReqClub</h2>
+
+            <EditForm Model="@registerModel" OnValidSubmit="HandleSubmit" FormName="RegisterForm">
+                <input class="text-input" placeholder="Username" @bind="registerModel.Username" />
+                <input class="text-input" type="password" placeholder="Password" @bind="registerModel.Password" />
+                <input class="text-input" type="password" placeholder="Confirm Password" @bind="registerModel.ConfirmPassword" />
+                
+                <button type="submit" class="login-btn">Join</button>
+            </EditForm>
+
+            <p class="signup-line">
+                Already have an account? <a href="/">Login here</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private RegisterModel registerModel = new();
+
+    private void HandleSubmit()
+    {
+        // TODO: validate credentials and matching passwords
+        NavigationManager.NavigateTo("/dashboard");
+    }
+
+    public class RegisterModel
+    {
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+        public string ConfirmPassword { get; set; } = "";
+    }
+}
