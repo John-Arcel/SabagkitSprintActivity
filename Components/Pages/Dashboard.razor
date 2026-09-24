@@ -6,7 +6,7 @@
 <div class="min-h-screen bg-[#f2f5fa] bg-bottom bg-fixed bg-no-repeat bg-contain font-sans flex flex-col" style="background-image: url('/images/dashboard-background.png');">
     
     <!-- Top Navigation Bar -->
-    <nav class="flex justify-between items-center bg-white/95 backdrop-blur-md px-6 py-4 md:px-12 shadow-sm sticky top-0 z-20 border-b border-gray-100">
+    <nav class="flex justify-between items-center bg-white px-6 py-4 md:px-12 shadow-sm sticky top-0 z-20">
         <div class="text-[26px] font-black text-[#111] tracking-[1.5px] scale-x-[1.1] origin-left">
             REQCLUB
         </div>
@@ -28,84 +28,84 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="grow px-4 py-8 md:px-8 flex justify-center">
-        <div class="w-full max-w-2xl flex flex-col">
+    <!-- Main Content Area -->
+    <main class="grow px-4 py-8 flex justify-center">
+        <!-- Center Column strictly limited to 680px width -->
+        <div class="w-full flex flex-col" style="max-width: 680px; margin: 0 auto;">
             
-            <!-- Clean Header Section (No Community Badge) -->
-            <div class="mb-6">
-                <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">
+            <!-- Welcome Header -->
+            <div class="mb-6" style="margin-top: 32px; margin-bottom: 24px;">
+                <h1 class="font-extrabold tracking-tight text-gray-900" style="font-size: 32px;">
                     Welcome back, <span class="text-[#6C63FF]">User</span> 👋
                 </h1>
                 <p class="text-sm text-gray-500 mt-1">Here is what is happening today.</p>
             </div>
 
-            <!-- Compact Inline Post Creator -->
-            <div class="bg-white rounded-[24px] p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <!-- "Make a Post" Box -->
+            <div class="bg-white p-3 shadow-md border-0 outline-none" style="border-radius: 20px;">
                 <div class="flex items-center gap-3">
-                    <!-- Creator Circle Avatar -->
-                    <div class="w-10 h-10 min-w-10 rounded-full shrink-0 aspect-square bg-[#6C63FF] text-white font-bold flex items-center justify-center shadow-sm">
+                    <!-- Circular Profile Avatar (Matches height) -->
+                    <div class="bg-[#6C63FF] text-white font-bold flex items-center justify-center shrink-0" 
+                        style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 50%; aspect-ratio: 1 / 1; flex-shrink: 0;">
                         U
                     </div>
                     
+                    <!-- Input: Change py-2.5 or use h-[44px] -->
                     <input @bind="newPostContent" 
-                           @bind:event="oninput"
-                           @onkeydown="HandleKeyDown"
-                           type="text" 
-                           placeholder="Share an update or idea..." 
-                           class="grow bg-[#f4f7fb] hover:bg-[#eef2f8] focus:bg-white text-[14px] text-gray-800 placeholder-gray-400 px-4 py-2.5 rounded-full border border-transparent focus:border-[#6C63FF]/30 focus:ring-4 focus:ring-[#6C63FF]/10 focus:outline-none transition-all" />
+                        @bind:event="oninput"
+                        @onkeydown="HandleKeyDown"
+                        type="text" 
+                        placeholder="Share an update or idea..." 
+                        class="grow bg-[#f4f7fb] hover:bg-[#eef2f8] focus:bg-white text-sm text-gray-800 placeholder-gray-400 px-4 py-5.5 border-0 outline-none transition-all" 
+                        style="border-radius: 9999px;" />
                     
+                    <!-- Button: Match the same py or h class -->
                     <button @onclick="SubmitPost" 
                             disabled="@(string.IsNullOrWhiteSpace(newPostContent))"
-                            class="bg-[#6C63FF] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#5A50E6] active:scale-95 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all shrink-0 flex items-center gap-1.5 shadow-sm">
-                        <span>Post</span>
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                            <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 004.835 9.25h4.915a.75.75 0 010 1.5H4.835a1.5 1.5 0 00-1.142 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
-                        </svg>
+                            class="bg-[#6C63FF] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#5A50E6] text-white text-sm font-semibold px-5 py-5.5 transition-all shrink-0 border-0 outline-none flex items-center justify-center"
+                            style="border-radius: 9999px;">
+                        Post
                     </button>
                 </div>
             </div>
 
-            <!-- Feed Stream with Spacing Below Post Area -->
-            <div class="mt-8 flex flex-col gap-4 pb-24">
+            <!-- Feed Stream with Added Spacing (margin-top: 35px) -->
+            <div class="flex flex-col gap-5 pb-24" style="margin-top: 35px;">
                 @if (!feedPosts.Any())
                 {
-                    <div class="text-center py-16 px-6 bg-white/70 backdrop-blur-sm rounded-[24px] border border-dashed border-gray-200">
-                        <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3 text-gray-400">
-                            💬
-                        </div>
-                        <p class="text-gray-600 font-medium text-sm">No updates in your feed yet.</p>
-                        <p class="text-gray-400 text-xs mt-1">Start the conversation by posting above!</p>
+                    <div class="text-center py-12 px-6 bg-white shadow-sm text-gray-500 text-sm border-0 outline-none" style="border-radius: 20px;">
+                        No updates yet. Be the first to post above!
                     </div>
                 }
                 else
                 {
                     @foreach (var post in feedPosts)
                     {
-                        <!-- Round Post Card -->
-                        <article class="bg-white rounded-[24px] p-5 shadow-sm border border-gray-100/80 hover:shadow-md transition-all">
-                            <!-- Author Row -->
+                        <!-- Distinct Post Card with Rounded Corners, Shadow, and No Outlines -->
+                        <article class="bg-white p-5 shadow-md border-0 outline-none" style="border-radius: 20px;">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
-                                    <!-- Circular Profile Icon -->
-                                    <div class="w-10 h-10 min-w-10 rounded-full shrink-0 aspect-square bg-[#6C63FF] text-white font-bold text-sm flex items-center justify-center shadow-sm">
+                                    <!-- Circular Author Icon -->
+                                    <div class="bg-[#6C63FF] text-white font-bold text-sm flex items-center justify-center shrink-0" 
+                                         style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 50%; aspect-ratio: 1 / 1; flex-shrink: 0;">
                                         @post.Author.Substring(0, 1)
                                     </div>
                                     <div>
                                         <h2 class="text-sm font-bold text-gray-900 leading-tight m-0">@post.Author</h2>
-                                        <span class="text-[11px] text-gray-400 font-normal">@FormatTime(post.Timestamp)</span>
+                                        <span class="text-[11px] text-gray-400">@FormatTime(post.Timestamp)</span>
                                     </div>
                                 </div>
-                                <span class="text-gray-300 text-xs">•••</span>
+                                <span class="text-gray-300 text-sm cursor-pointer">•••</span>
                             </div>
 
-                            <!-- Post Body -->
-                            <p class="text-gray-700 text-[14px] leading-relaxed break-words pl-[52px] whitespace-pre-line m-0">@post.Content</p>
+                            <p class="text-gray-700 text-sm leading-relaxed break-words pl-[52px] m-0 whitespace-pre-line">
+                                @post.Content
+                            </p>
                         </article>
                     }
                 }
             </div>
-            
+
         </div>
     </main>
 </div>
