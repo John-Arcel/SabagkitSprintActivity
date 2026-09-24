@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q3lJrrD+eLamn0ofqTDXRQubT8i2tdu/Qo0pyE4LsmY=",
+  "Hash": "zx7BPH0CSKwBwT1akokvnPLVAPjjWDS7VlfQL6xuzWI=",
   "Source": "MyBlazorApp",
   "BasePath": "_content/MyBlazorApp",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\L23Y16W35\\Desktop\\Sabagkit-SPRINT\\MyBlazorApp\\wwwroot\\css\\app.min.css",
+      "SourceId": "MyBlazorApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\L23Y16W35\\Desktop\\Sabagkit-SPRINT\\MyBlazorApp\\wwwroot\\",
+      "BasePath": "_content/MyBlazorApp",
+      "RelativePath": "css/app.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.min.css"
     },
     {
       "Identity": "C:\\Users\\L23Y16W35\\Desktop\\Sabagkit-SPRINT\\MyBlazorApp\\wwwroot\\favicon.png",

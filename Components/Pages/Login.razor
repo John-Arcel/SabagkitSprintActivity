@@ -3,19 +3,30 @@
 
 <PageTitle>ReqClub - Login</PageTitle>
 
-<div class="login-page">
-    <div class="form-area">
-        <div class="form-block">
-            <h2 class="welcome-text">Welcome Back</h2>
+<div class="relative min-h-screen bg-cover bg-center bg-no-repeat font-sans" style="background-image: url('/images/login-background.png');">
+    
+    <!-- Form Area (Left aligned on desktop, full width on mobile) -->
+    <div class="absolute top-0 left-0 h-full flex items-center justify-center w-full px-6 lg:w-[46%] lg:px-0">
+        
+        <!-- Form Block -->
+        <div class="w-full max-w-[380px] text-center">
+            <h2 class="text-[40px] font-extrabold text-[#111] mb-5">Welcome Back</h2>
 
             <EditForm Model="@loginModel" OnValidSubmit="HandleLogin" FormName="LoginForm">
-                <input class="text-input" placeholder="Username" @bind="loginModel.Username" />
-                <input class="text-input" type="password" placeholder="Password" @bind="loginModel.Password" />
-                <button type="submit" class="login-btn">Login</button>
+                <input placeholder="Username" @bind="loginModel.Username" 
+                       class="block w-full py-[18px] px-[22px] mb-4 border-none rounded-[30px] text-[15px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] placeholder-[#aaa] box-border focus:outline-none focus:ring-2 focus:ring-[#6C63FF]" />
+                
+                <input type="password" placeholder="Password" @bind="loginModel.Password" 
+                       class="block w-full py-[18px] px-[22px] mb-4 border-none rounded-[30px] text-[15px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] placeholder-[#aaa] box-border focus:outline-none focus:ring-2 focus:ring-[#6C63FF]" />
+                
+                <button type="submit" 
+                        class="block w-full p-[18px] mt-2 bg-[#6C63FF] text-white font-bold text-base border-none rounded-[30px] cursor-pointer transition-colors duration-150 hover:bg-[#5A50E6] box-border">
+                    Login
+                </button>
             </EditForm>
 
-            <p class="signup-line">
-                Don't have an account? <a href="/register">Sign up here</a>
+            <p class="mt-4 text-sm text-[#111]">
+                Don't have an account? <a href="/register" class="text-[#5B4FE0] font-semibold no-underline hover:underline">Sign up here</a>
             </p>
         </div>
     </div>

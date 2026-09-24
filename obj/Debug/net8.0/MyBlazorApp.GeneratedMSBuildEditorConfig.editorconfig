@@ -26,8 +26,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Weather.razor]
@@ -49,15 +61,3 @@ build_metadata.AdditionalFiles.CssScope = b-8h0dmotat2
 [C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-wa7oawb2kj
-
-[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Dashboard.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-c2hhrud7dd
-
-[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-8jzusy9o0u
-
-[C:/Users/L23Y16W35/Desktop/Sabagkit-SPRINT/MyBlazorApp/Components/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-5t3fhlf0r1

@@ -27,6 +27,4 @@ C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\refint\M
 C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.pdb
 C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.genruntimeconfig.cache
 C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\ref\MyBlazorApp.dll
-C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Pages\Login.razor.rz.scp.css
-C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Pages\Register.razor.rz.scp.css
-C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Pages\Dashboard.razor.rz.scp.css
+C:\Users\L23Y16W35\Desktop\Sabagkit-SPRINT\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.sourcelink.json

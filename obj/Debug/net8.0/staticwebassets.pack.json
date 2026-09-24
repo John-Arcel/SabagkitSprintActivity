@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\L23Y16W35\\Desktop\\Sabagkit-SPRINT\\MyBlazorApp\\wwwroot\\css\\app.min.css",
+      "PackagePath": "staticwebassets\\css\\app.min.css"
+    },
+    {
       "Id": "C:\\Users\\L23Y16W35\\Desktop\\Sabagkit-SPRINT\\MyBlazorApp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

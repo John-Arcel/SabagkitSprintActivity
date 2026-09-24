@@ -3,21 +3,33 @@
 
 <PageTitle>ReqClub - Join</PageTitle>
 
-<div class="login-page">
-    <div class="form-area">
-        <div class="form-block">
-            <h2 class="welcome-text">Join ReqClub</h2>
+<div class="relative min-h-screen bg-cover bg-center bg-no-repeat font-sans" style="background-image: url('/images/register-background.png');">
+    
+    <!-- Form Area (Right aligned on desktop, full width on mobile) -->
+    <div class="absolute top-0 right-0 h-full flex items-center justify-center w-full px-6 lg:w-[46%] lg:px-0">
+        
+        <!-- Form Block -->
+        <div class="w-full max-w-[380px] text-center">
+            <h2 class="text-[40px] font-extrabold text-[#111] mb-5">Join ReqClub</h2>
 
             <EditForm Model="@registerModel" OnValidSubmit="HandleSubmit" FormName="RegisterForm">
-                <input class="text-input" placeholder="Username" @bind="registerModel.Username" />
-                <input class="text-input" type="password" placeholder="Password" @bind="registerModel.Password" />
-                <input class="text-input" type="password" placeholder="Confirm Password" @bind="registerModel.ConfirmPassword" />
+                <input placeholder="Username" @bind="registerModel.Username" 
+                       class="block w-full py-[18px] px-[22px] mb-4 border-none rounded-[30px] text-[15px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] placeholder-[#aaa] box-border focus:outline-none focus:ring-2 focus:ring-[#6C63FF]" />
                 
-                <button type="submit" class="login-btn">Join</button>
+                <input type="password" placeholder="Password" @bind="registerModel.Password" 
+                       class="block w-full py-[18px] px-[22px] mb-4 border-none rounded-[30px] text-[15px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] placeholder-[#aaa] box-border focus:outline-none focus:ring-2 focus:ring-[#6C63FF]" />
+                
+                <input type="password" placeholder="Confirm Password" @bind="registerModel.ConfirmPassword" 
+                       class="block w-full py-[18px] px-[22px] mb-4 border-none rounded-[30px] text-[15px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] placeholder-[#aaa] box-border focus:outline-none focus:ring-2 focus:ring-[#6C63FF]" />
+                
+                <button type="submit" 
+                        class="block w-full p-[18px] mt-2 bg-[#6C63FF] text-white font-bold text-base border-none rounded-[30px] cursor-pointer transition-colors duration-150 hover:bg-[#5A50E6] box-border">
+                    Join
+                </button>
             </EditForm>
 
-            <p class="signup-line">
-                Already have an account? <a href="/">Login here</a>
+            <p class="mt-4 text-sm text-[#111]">
+                Already have an account? <a href="/" class="text-[#5B4FE0] font-semibold no-underline hover:underline">Login here</a>
             </p>
         </div>
     </div>
