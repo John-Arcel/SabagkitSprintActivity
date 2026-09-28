@@ -1,0 +1,178 @@
+@if (Post != null)
+{
+    <!-- Dimmed Modal Backdrop -->
+    <div @onclick="HandleClose" 
+         style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.55); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 16px;">
+        
+        <!-- Modal Card Container -->
+        <div @onclick:stopPropagation="true" 
+             style="background-color: #ffffff; width: 100%; max-width: 540px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+            
+            <!-- Modal Header -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #f1f5f9;">
+                <h3 style="font-weight: 800; font-size: 18px; color: #111827; margin: 0;">Post & Comments</h3>
+                <button type="button" 
+                        @onclick="HandleClose" 
+                        style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9ca3af; background: transparent; border: none; cursor: pointer; font-size: 24px; line-height: 1;">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Scrollable Comments Area -->
+            <div style="overflow-y: auto; padding: 20px 24px; flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
+                
+                <!-- Original Post Preview Card inside Modal -->
+                <div style="background-color: #f8fafd; padding: 16px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #6C63FF; color: white; font-weight: bold; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            @Post.Author.Substring(0, 1)
+                        </div>
+                        <div>
+                            <h4 style="font-size: 14px; font-weight: 700; color: #111827; margin: 0; line-height: 1.2;">@Post.Author</h4>
+                            <span style="font-size: 11px; color: #9ca3af;">@FormatTime(Post.Timestamp)</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 14px; color: #374151; line-height: 1.5; margin: 0; white-space: pre-line;">
+                        @Post.Content
+                    </p>
+                </div>
+
+                <!-- Rating Pill inside Modal -->
+                <div style="display: flex; align-items: center;">
+                    <div style="border-radius: 9999px; background-color: #f2f5fa; padding: 4px; display: inline-flex; align-items: center;">
+                        <button type="button" 
+                                @onclick="() => TriggerVote(1)"
+                                style="@(Post.UserVote == 1 ? "background-color: #6C63FF; color: #ffffff;" : "background-color: transparent; color: #6b7280;"); width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M12 4l-7 7h4v9h6v-9h4l-7-7z"/>
+                            </svg>
+                        </button>
+
+                        <span style="@(Post.UserVote != 0 ? "color: #6C63FF;" : "color: #374151;"); font-size: 12px; font-weight: 700; padding: 0 8px;">
+                            @Post.Score
+                        </span>
+
+                        <button type="button" 
+                                @onclick="() => TriggerVote(-1)"
+                                style="@(Post.UserVote == -1 ? "background-color: #6C63FF; color: #ffffff;" : "background-color: transparent; color: #6b7280;"); width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M12 20l7-7h-4V4H9v9H5l7 7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px solid #f1f5f9; margin: 4px 0;"></div>
+
+                <!-- Comments List -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <span style="font-size: 12px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Comments (@Post.Comments.Count)
+                    </span>
+                    
+                    @if (!Post.Comments.Any())
+                    {
+                        <div style="text-align: center; padding: 24px 0; color: #9ca3af; font-size: 13px; font-style: italic;">
+                            No comments yet. Be the first to share your thoughts!
+                        </div>
+                    }
+                    else
+                    {
+                        @foreach (var comment in Post.Comments)
+                        {
+                            <div style="display: flex; align-items: flex-start; gap: 12px; background-color: #f8fafc; padding: 12px; border-radius: 14px;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #e2e8f0; color: #475569; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    @comment.Author.Substring(0, 1)
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <span style="font-size: 13px; font-weight: 700; color: #111827;">@comment.Author</span>
+                                        <span style="font-size: 10px; color: #9ca3af;">@FormatTime(comment.Timestamp)</span>
+                                    </div>
+                                    <p style="font-size: 13px; color: #374151; margin-top: 4px; margin-bottom: 0; line-height: 1.4; white-space: pre-line;">
+                                        @comment.Content
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <!-- Modal Reply Input Bar -->
+            <div style="padding: 16px; background-color: #f8fafc; border-top: 1px solid #f1f5f9; display: flex; align-items: center; gap: 10px;">
+                <input @bind="newCommentContent" 
+                       @bind:event="oninput"
+                       @onkeydown="HandleKeyDown"
+                       type="text" 
+                       placeholder="Write a comment..." 
+                       style="flex-grow: 1; background: #ffffff; padding: 10px 16px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 9999px; outline: none;" />
+                
+                <button type="button" 
+                        @onclick="SubmitComment" 
+                        disabled="@(string.IsNullOrWhiteSpace(newCommentContent))"
+                        style="background-color: #6C63FF; color: #ffffff; border-radius: 9999px; padding: 10px 18px; border: none; font-size: 13px; font-weight: 700; cursor: pointer; opacity: @(string.IsNullOrWhiteSpace(newCommentContent) ? "0.5" : "1");">
+                    Reply
+                </button>
+            </div>
+
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public PostModel? Post { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    [Parameter]
+    public EventCallback<(PostModel Post, int Direction)> OnVote { get; set; }
+
+    private string newCommentContent = "";
+
+    private async Task HandleClose()
+    {
+        await OnClose.InvokeAsync();
+    }
+
+    private async Task TriggerVote(int direction)
+    {
+        if (Post != null)
+        {
+            await OnVote.InvokeAsync((Post, direction));
+        }
+    }
+
+    private void SubmitComment()
+    {
+        if (Post == null || string.IsNullOrWhiteSpace(newCommentContent)) return;
+
+        Post.Comments.Add(new CommentModel
+        {
+            Author = "User",
+            Content = newCommentContent.Trim(),
+            Timestamp = DateTime.Now
+        });
+
+        newCommentContent = "";
+    }
+
+    private void HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            SubmitComment();
+        }
+    }
+
+    private string FormatTime(DateTime time)
+    {
+        var span = DateTime.Now - time;
+        if (span.TotalMinutes < 1) return "Just now";
+        if (span.TotalMinutes < 60) return $"{(int)span.TotalMinutes}m ago";
+        if (span.TotalHours < 24) return $"{(int)span.TotalHours}h ago";
+        return time.ToString("MMM d");
+    }
+}

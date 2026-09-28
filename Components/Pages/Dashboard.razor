@@ -12,17 +12,17 @@
         </div>
         
         <div class="flex items-center gap-5">
-            <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-[#333] hover:bg-gray-100 transition-colors">
+            <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-[#333] hover:bg-gray-100 transition-colors cursor-pointer border-0">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                 </svg>
             </button>
-            <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-[#333] hover:bg-gray-100 transition-colors">
+            <button type="button" class="w-10 h-10 rounded-full flex items-center justify-center text-[#333] hover:bg-gray-100 transition-colors cursor-pointer border-0">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
                 </svg>
             </button>
-            <a href="/" class="text-sm font-bold text-gray-700 hover:text-red-600 transition-colors ml-2">
+            <a href="/" class="text-sm font-bold text-gray-700 hover:text-red-600 transition-colors ml-2 no-underline">
                 Logout
             </a>
         </div>
@@ -34,8 +34,8 @@
         <div class="w-full flex flex-col" style="max-width: 680px; margin: 0 auto;">
             
             <!-- Welcome Header -->
-            <div class="mb-6" style="margin-top: 32px; margin-bottom: 24px;">
-                <h1 class="font-extrabold tracking-tight text-gray-900" style="font-size: 32px;">
+            <div class="mt-8 mb-6" style="margin-top: 32px; margin-bottom: 24px;">
+                <h1 class="font-extrabold tracking-tight text-gray-900 text-[32px] m-0">
                     Welcome back, <span class="text-[#6C63FF]">User</span> 👋
                 </h1>
                 <p class="text-sm text-gray-500 mt-1">Here is what is happening today.</p>
@@ -44,32 +44,30 @@
             <!-- "Make a Post" Box -->
             <div class="bg-white p-3 shadow-md border-0 outline-none" style="border-radius: 20px;">
                 <div class="flex items-center gap-3">
-                    <!-- Circular Profile Avatar (Matches height) -->
+                    <!-- Circular Profile Avatar -->
                     <div class="bg-[#6C63FF] text-white font-bold flex items-center justify-center shrink-0" 
-                        style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 50%; aspect-ratio: 1 / 1; flex-shrink: 0;">
+                         style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 50%; aspect-ratio: 1 / 1; flex-shrink: 0;">
                         U
                     </div>
                     
-                    <!-- Input: Change py-2.5 or use h-[44px] -->
                     <input @bind="newPostContent" 
-                        @bind:event="oninput"
-                        @onkeydown="HandleKeyDown"
-                        type="text" 
-                        placeholder="Share an update or idea..." 
-                        class="grow bg-[#f4f7fb] hover:bg-[#eef2f8] focus:bg-white text-sm text-gray-800 placeholder-gray-400 px-4 py-5.5 border-0 outline-none transition-all" 
-                        style="border-radius: 9999px;" />
+                           @bind:event="oninput"
+                           @onkeydown="HandleKeyDown"
+                           type="text" 
+                           placeholder="Share an update or idea..." 
+                           class="grow bg-[#f4f7fb] hover:bg-[#eef2f8] focus:bg-white text-sm text-gray-800 placeholder-gray-400 px-4 py-3.5 border-0 outline-none transition-all" 
+                           style="border-radius: 9999px;" />
                     
-                    <!-- Button: Match the same py or h class -->
                     <button @onclick="SubmitPost" 
                             disabled="@(string.IsNullOrWhiteSpace(newPostContent))"
-                            class="bg-[#6C63FF] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#5A50E6] text-white text-sm font-semibold px-5 py-5.5 transition-all shrink-0 border-0 outline-none flex items-center justify-center"
+                            class="bg-[#6C63FF] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#5A50E6] text-white text-sm font-semibold px-5 py-3.5 transition-all shrink-0 border-0 outline-none flex items-center justify-center cursor-pointer"
                             style="border-radius: 9999px;">
                         Post
                     </button>
                 </div>
             </div>
 
-            <!-- Feed Stream with Added Spacing (margin-top: 35px) -->
+            <!-- Feed Stream -->
             <div class="flex flex-col gap-5 pb-24" style="margin-top: 35px;">
                 @if (!feedPosts.Any())
                 {
@@ -81,11 +79,14 @@
                 {
                     @foreach (var post in feedPosts)
                     {
-                        <!-- Distinct Post Card with Rounded Corners, Shadow, and No Outlines -->
-                        <article class="bg-white p-5 shadow-md border-0 outline-none" style="border-radius: 20px;">
+                        <!-- Post Card (Clickable to open comment modal) -->
+                        <article @onclick="() => OpenCommentModal(post)"
+                                 class="bg-white p-5 shadow-md border-0 outline-none cursor-pointer hover:shadow-lg transition-all" 
+                                 style="border-radius: 20px;">
+                            
+                            <!-- Author Row -->
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
-                                    <!-- Circular Author Icon -->
                                     <div class="bg-[#6C63FF] text-white font-bold text-sm flex items-center justify-center shrink-0" 
                                          style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 50%; aspect-ratio: 1 / 1; flex-shrink: 0;">
                                         @post.Author.Substring(0, 1)
@@ -95,12 +96,59 @@
                                         <span class="text-[11px] text-gray-400">@FormatTime(post.Timestamp)</span>
                                     </div>
                                 </div>
-                                <span class="text-gray-300 text-sm cursor-pointer">•••</span>
+                                <span class="text-gray-300 text-sm">•••</span>
                             </div>
 
+                            <!-- Post Content Body -->
                             <p class="text-gray-700 text-sm leading-relaxed break-words pl-[52px] m-0 whitespace-pre-line">
                                 @post.Content
                             </p>
+
+                            <!-- Actions Row (Up/Down Vote & Comments) -->
+                            <div class="flex items-center gap-3 mt-4 pl-[52px]">
+                                
+                                <!-- Upvote / Downvote Pill Container -->
+                                <div class="inline-flex items-center bg-[#f2f5fa] rounded-full p-1" 
+                                     style="border-radius: 9999px; background-color: #f2f5fa; padding: 4px;"
+                                     @onclick:stopPropagation="true">
+                                    
+                                    <!-- Upvote Button -->
+                                    <button type="button" 
+                                            @onclick="() => HandleVote(post, 1)"
+                                            style="@(post.UserVote == 1 ? "background-color: #6C63FF; color: #ffffff;" : "background-color: transparent; color: #6b7280;"); width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                            <path d="M12 4l-7 7h4v9h6v-9h4l-7-7z"/>
+                                        </svg>
+                                    </button>
+
+                                    <!-- Score Counter -->
+                                    <span style="@(post.UserVote != 0 ? "color: #6C63FF;" : "color: #374151;"); font-size: 12px; font-weight: 700; padding: 0 8px; user-select: none;">
+                                        @post.Score
+                                    </span>
+
+                                    <!-- Downvote Button -->
+                                    <button type="button" 
+                                            @onclick="() => HandleVote(post, -1)"
+                                            style="@(post.UserVote == -1 ? "background-color: #6C63FF; color: #ffffff;" : "background-color: transparent; color: #6b7280;"); width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                            <path d="M12 20l7-7h-4V4H9v9H5l7 7z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Comment Button -->
+                                <button type="button" 
+                                        @onclick="() => OpenCommentModal(post)" 
+                                        @onclick:stopPropagation="true"
+                                        style="border-radius: 9999px; background-color: #f2f5fa; padding: 5px 14px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color: #6b7280;">
+                                        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                                    </svg>
+                                    <span style="font-size: 12px; font-weight: 700; color: #374151;">@post.Comments.Count</span>
+                                </button>
+
+                            </div>
+
                         </article>
                     }
                 }
@@ -110,22 +158,44 @@
     </main>
 </div>
 
+<!-- Render Separate Component -->
+<CommentModal Post="activePostForModal" 
+              OnClose="CloseCommentModal" 
+              OnVote="HandleVoteTuple" />
+
 @code {
     private string newPostContent = "";
     private List<PostModel> feedPosts = new();
+    private PostModel? activePostForModal = null;
 
     protected override void OnInitialized()
     {
-        feedPosts.Add(new PostModel { 
+        var post1 = new PostModel 
+        { 
             Author = "User",
             Content = "Just setting up my new dashboard. The Tailwind layout is coming together perfectly!", 
-            Timestamp = DateTime.Now.AddMinutes(-45) 
+            Timestamp = DateTime.Now.AddMinutes(-45),
+            Score = 4,
+            UserVote = 0
+        };
+        post1.Comments.Add(new CommentModel 
+        { 
+            Author = "Alex", 
+            Content = "Looking clean! Nice work on the card rounding.", 
+            Timestamp = DateTime.Now.AddMinutes(-20) 
         });
-        feedPosts.Add(new PostModel { 
+
+        var post2 = new PostModel 
+        { 
             Author = "Alex",
             Content = "Hello ReqClub! Excited to test out this new interface.", 
-            Timestamp = DateTime.Now.AddHours(-2) 
-        });
+            Timestamp = DateTime.Now.AddHours(-2),
+            Score = 7,
+            UserVote = 1
+        };
+
+        feedPosts.Add(post1);
+        feedPosts.Add(post2);
     }
 
     private void SubmitPost()
@@ -136,10 +206,41 @@
         {
             Author = "User",
             Content = newPostContent.Trim(),
-            Timestamp = DateTime.Now
+            Timestamp = DateTime.Now,
+            Score = 0,
+            UserVote = 0
         });
 
         newPostContent = "";
+    }
+
+    private void HandleVote(PostModel post, int direction)
+    {
+        if (post.UserVote == direction)
+        {
+            post.Score -= direction;
+            post.UserVote = 0;
+        }
+        else
+        {
+            post.Score += (direction - post.UserVote);
+            post.UserVote = direction;
+        }
+    }
+
+    private void HandleVoteTuple((PostModel Post, int Direction) args)
+    {
+        HandleVote(args.Post, args.Direction);
+    }
+
+    private void OpenCommentModal(PostModel post)
+    {
+        activePostForModal = post;
+    }
+
+    private void CloseCommentModal()
+    {
+        activePostForModal = null;
     }
 
     private void HandleKeyDown(KeyboardEventArgs e)
@@ -157,12 +258,5 @@
         if (span.TotalMinutes < 60) return $"{(int)span.TotalMinutes}m ago";
         if (span.TotalHours < 24) return $"{(int)span.TotalHours}h ago";
         return time.ToString("MMM d");
-    }
-
-    public class PostModel
-    {
-        public string Author { get; set; } = "User";
-        public string Content { get; set; } = "";
-        public DateTime Timestamp { get; set; }
     }
 }
